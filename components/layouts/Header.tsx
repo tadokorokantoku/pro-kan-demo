@@ -13,6 +13,9 @@ const Header: FC = () => {
 				<Button variant="ghost">
 					<Link href="/action">Actions</Link>
 				</Button>
+				<Button variant="ghost">
+					<Link href="/projects">Projects</Link>
+				</Button>
 			</div>
 			<Separator orientation="horizontal" className="w-full" />
 		</div>
