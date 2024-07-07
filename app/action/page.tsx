@@ -1,12 +1,9 @@
-import { CardTitle } from "@/components/ui/card";
+import { fetchActions } from "@/actions/Action";
 import * as Components from "@/feature/action";
 import type { Action } from "../api/types";
 
 export default async function Home() {
-	const response = await fetch("http://localhost:3000/api/actions", {
-		cache: "no-cache",
-	});
-
+	const response = await fetchActions();
 	const actionList: Action[] = await response.json();
 
 	return (
