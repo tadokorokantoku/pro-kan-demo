@@ -3,8 +3,7 @@ import * as Components from "@/feature/action";
 import type { Action } from "../api/types";
 
 export default async function Home() {
-	const response = await fetchActions();
-	const actionList: Action[] = await response.json();
+	const actionList: Action[] = await fetchActions();
 
 	return (
 		<main className="p-32">
