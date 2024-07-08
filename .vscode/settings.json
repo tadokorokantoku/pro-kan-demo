@@ -28,5 +28,12 @@
     "quickfix.biome": "explicit",
     "source.organizeImports.biome": "explicit",
     "source.fixAll.stylelint": "explicit"
+  },
+  "workbench.colorCustomizations": {
+    "button.background": "#5272a8",
+    "badge.background": "#a6c1ee",
+    "statusBar.background": "#fbc2eb",
+    "activityBar.background": "#a6c1ee",
+    "activityBarBadge.background": "#fbc2eb"
   }
 }
