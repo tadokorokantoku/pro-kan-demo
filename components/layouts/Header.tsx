@@ -27,10 +27,10 @@ const Header: FC = () => {
 					</div>
 					<ul className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
 						<li>
-							<a href="/action">Actions</a>
+							<a href="/action">アクション</a>
 						</li>
 						<li>
-							<a href="/project">Project</a>
+							<a href="/project">プロジェクト一覧</a>
 						</li>
 					</ul>
 				</div>

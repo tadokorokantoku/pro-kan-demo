@@ -30,10 +30,10 @@
     "source.fixAll.stylelint": "explicit"
   },
   "workbench.colorCustomizations": {
-    "button.background": "#5272a8",
-    "badge.background": "#a6c1ee",
-    "statusBar.background": "#fbc2eb",
-    "activityBar.background": "#a6c1ee",
-    "activityBarBadge.background": "#fbc2eb"
+    "button.background": "#DA3716",
+    "badge.background": "#DA3716",
+    "statusBar.background": "#DA3716",
+    "activityBar.background": "#01355E",
+    "activityBarBadge.background": "#DA3716"
   }
 }
