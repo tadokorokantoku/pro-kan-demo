@@ -1,9 +1,12 @@
-import Link from "next/link";
+"use client";
+
+import { signIn, useSession } from "next-auth/react";
 import type { FC } from "react";
-import { Button } from "../ui/button";
-import { Separator } from "../ui/separator";
 
 const Header: FC = () => {
+	const { data: session, status } = useSession();
+	console.log("useSession", session, status);
+
 	return (
 		<div className="navbar bg-base-100">
 			<div className="navbar-start">
@@ -35,11 +38,9 @@ const Header: FC = () => {
 					</ul>
 				</div>
 			</div>
-			<div className="navbar-center">
-				<a href="/" className="btn btn-ghost text-xl">
-					daisyUI
-				</a>
-			</div>
+			<button type="button" className="btn" onClick={() => signIn("github")}>
+				daisyUI
+			</button>
 			<div className="navbar-end">
 				<button type="button" className="btn btn-ghost btn-circle">
 					<svg
