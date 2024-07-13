@@ -1,12 +1,13 @@
 "use client";
 
+import { Avatar } from "@/components/ui/avatar";
 import { signIn, useSession } from "next-auth/react";
 import type { FC } from "react";
 
 const Header: FC = () => {
 	const { data: session, status } = useSession();
-	console.log("useSession", session, status);
 
+	if (status === "loading") return null;
 	return (
 		<div className="navbar bg-base-100">
 			<div className="navbar-start">
@@ -59,26 +60,11 @@ const Header: FC = () => {
 						/>
 					</svg>
 				</button>
-				<button type="button" className="btn btn-ghost btn-circle">
-					<div className="indicator">
-						<svg
-							xmlns="http://www.w3.org/2000/svg"
-							className="h-5 w-5"
-							fill="none"
-							viewBox="0 0 24 24"
-							stroke="currentColor"
-						>
-							<title>Notification</title>
-							<path
-								strokeLinecap="round"
-								strokeLinejoin="round"
-								strokeWidth="2"
-								d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"
-							/>
-						</svg>
-						<span className="badge badge-xs badge-primary indicator-item" />
-					</div>
-				</button>
+				{status === "authenticated" && (
+					<button type="button" className="btn btn-square btn-ghost">
+						<Avatar avatarUrl={session.user?.image} />
+					</button>
+				)}
 			</div>
 		</div>
 	);
