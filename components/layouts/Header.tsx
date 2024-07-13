@@ -3,9 +3,12 @@
 import { Avatar } from "@/components/ui/avatar";
 import { signIn, useSession } from "next-auth/react";
 import type { FC } from "react";
+import { useModal } from "../modal/hooks";
 
 const Header: FC = () => {
 	const { data: session, status } = useSession();
+
+	const { modal: TestModal, showModal } = useModal("my-test");
 
 	if (status === "loading") return null;
 	return (
@@ -43,7 +46,11 @@ const Header: FC = () => {
 				daisyUI
 			</button>
 			<div className="navbar-end">
-				<button type="button" className="btn btn-ghost btn-circle">
+				<button
+					type="button"
+					onClick={showModal}
+					className="btn btn-ghost btn-circle"
+				>
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
 						className="h-5 w-5"
@@ -66,6 +73,7 @@ const Header: FC = () => {
 					</button>
 				)}
 			</div>
+			{TestModal && <TestModal />}
 		</div>
 	);
 };
